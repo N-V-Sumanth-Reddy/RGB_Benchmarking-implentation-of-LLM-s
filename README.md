@@ -37,14 +37,14 @@ cd RGB_Benchmarking
 ```
 
 ### 2️⃣ RUN the ipynb file
-```bash
+
 Run all the cells in the ipynb file so that you can use gradio app to evaluate in the last cell.
-```
+
 
 ### 3️⃣ Run the Evaluation
-```bash
+
 Initially please add your own API Keys of the LLM models in the config.ini file. Select the paramaters and model to evaluate the model will automatically fetch the data set required form the data config folder that is placed in the drive if the data config file dosen't exist in the drive please download and upload in the drive. Also select the input parameters in the gradio app.
-```
+
 
 ## 📜 License
 This project is licensed under the MIT License. See the LICENSE file for details.
