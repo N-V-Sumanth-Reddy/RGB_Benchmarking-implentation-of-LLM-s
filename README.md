@@ -1,37 +1,54 @@
-"# RGB_Benchmarking-implentation-of-LLM-s" 
-An implementation for [Benchmarking Large Language Models in Retrieval-Augmented Generation](https://arxiv.org/abs/2309.01431)
-Retrieval-Augmented Generation Benchmark
+# RGB Benchmarking - Implementation of LLMs
 
-The data is placed in the data/ directory:
+This repository contains an implementation for the paper [Benchmarking Large Language Models in Retrieval-Augmented Generation](https://arxiv.org/abs/2309.01431). The project focuses on evaluating the effectiveness of Large Language Models (LLMs) in Retrieval-Augmented Generation (RAG) using various benchmarking datasets.
 
-data/
-├── en.json
-├── en_refine.json
-├── en_int.json
-├── en_fact.json
+## 📂 Data Structure
+The dataset files are located in the `data` directory and are structured as follows:
 
-To evaluate Information Integration, use en_int.json.
+```
+data
+├── en.json           # Main dataset
+├── en_refine.json    # Refined dataset
+├── en_int.json       # Information Integration dataset
+├── en_fact.json      # Counterfactual Robustness dataset
+```
 
-To evaluate Counterfactual Robustness, use en_fact.json.
+### 📝 Dataset Descriptions
+- **`en_int.json`**: Used to evaluate Information Integration.
+- **`en_fact.json`**: Used to evaluate Counterfactual Robustness.
+- **`en_refine.json`**: The refined dataset, which includes:
+  - Removal of incorrect positive and negative documents.
+  - Addition of relevant positive documents.
+  - Correction of inaccurate answers.
 
-The Refined Data
+## 📊 Evaluation Metrics
+The evaluation process involves assessing model accuracy, rejection rates, and error detection. The following metrics are used:
 
-The refined dataset includes:
+- **`all_rate`**: Represents accuracy when `noise_rate < 1`, or rejection rate when `noise_rate = 1`.
+- **`fact_check_rate`**: Error detection rate (ED).
+- **`reject_rate`**: Rejection rate (Rej*).
+- **`correct_rate`**: Error correction rate (CR).
 
-Removal of incorrect positive and negative documents.
+## 🚀 Usage
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/your-repo/RGB_Benchmarking.git
+cd RGB_Benchmarking
+```
 
-Addition of relevant positive documents.
+### 2️⃣ RUN the ipynb file
+```bash
+Run all the cells in the ipynb file so that you can use gradio app to evaluate in the last cell.
+```
 
-Correction of inaccurate answers.
+### 3️⃣ Run the Evaluation
+```bash
+Initially please add your own API Keys of the LLM models in the config.ini file. Select the paramaters and model to evaluate the model will automatically fetch the data set required form the data config folder that is placed in the drive if the data config file dosen't exist in the drive please download and upload in the drive. Also select the input parameters in the gradio app.
+```
 
-Evaluation
+## 📜 License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-The evaluation process involves assessing model accuracy, rejection rates, and error detection. The outputs include:
+---
 
-all_rate: Accuracy (when noise_rate < 1) or rejection rate (noise_rate = 1).
-
-fact_check_rate: Error detection rate (ED).
-
-reject_rate: Rejection rate (Rej*).
-
-correct_rate: Error correction rate (CR).
+For more details, refer to the original research paper: [Benchmarking Large Language Models in Retrieval-Augmented Generation](https://arxiv.org/abs/2309.01431).
