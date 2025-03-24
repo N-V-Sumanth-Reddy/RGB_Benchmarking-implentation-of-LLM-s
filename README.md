@@ -2,6 +2,12 @@
 
 This repository contains an implementation for the paper [Benchmarking Large Language Models in Retrieval-Augmented Generation](https://arxiv.org/abs/2309.01431). The project focuses on evaluating the effectiveness of Large Language Models (LLMs) in Retrieval-Augmented Generation (RAG) using various benchmarking datasets.
 
+Understand below parameters from research paper to Implement and Evaluate the following LLM abilities required for RAG
+a. Noise Robustness
+b. Negative Rejection
+c. Information Integration
+d. Counterfactual Robustness
+
 ## 📂 Data Structure
 The dataset files are located in the `data` directory and are structured as follows:
 
